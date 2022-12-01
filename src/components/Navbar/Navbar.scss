@@ -1,0 +1,13 @@
+.navbar {
+  background-color: #fafafa;
+  .navbar-inner {
+    list-style: none;
+    align-items: center;
+  }
+  .nav-link.active {
+    color: red;
+  }
+  .nav-link {
+    transition: 0.25s linear;
+  }
+}

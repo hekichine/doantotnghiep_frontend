@@ -1,19 +1,21 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import Login from "./components/Login/Login";
+import Navbar from "./components/Navbar/Navbar";
+import Home from "./components/Home/Home";
+import Register from "./components/Register/Register";
+
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path="/" exec element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+        </Routes>
+      </Router>
     </div>
   );
 }

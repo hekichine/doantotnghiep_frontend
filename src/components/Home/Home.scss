@@ -1,0 +1,20 @@
+.home-container {
+  h2 {
+    text-align: center;
+  }
+  .col-inner {
+    background-color: #ebcfcf;
+    padding: 10px 20px;
+    .username {
+      padding: 20px 0;
+    }
+    .delete-user {
+      background-color: #796e6e;
+      border: none;
+      outline: none;
+      padding: 10px 20px;
+      border-radius: 10px;
+      color: #fff;
+    }
+  }
+}
