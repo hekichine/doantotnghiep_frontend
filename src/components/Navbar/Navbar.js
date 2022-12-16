@@ -1,9 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
+import { useEffect } from "react";
+import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 
 import "./Navbar.scss";
+import logo from "../../minh-sang-store.png";
 const Navbar = () => {
-  const [user, setUser] = useState("");
+  const user = useSelector((state) => state.auth.login.currentData);
+
   return (
     <>
       <nav className="navbar navbar-expand-lg">
@@ -11,13 +15,13 @@ const Navbar = () => {
           <ul className="navbar-inner me-auto mb-2 mb-lg-0 gx-5 row">
             <li className=" col">
               <NavLink to={"/"} className="nav-link" aria-current="page">
-                Home
+                <img className="logo-store" src={logo} alt="logo-store" />
               </NavLink>
             </li>
             {user ? (
               <>
                 <li className=" col">
-                  <span>Hi! {user}</span>
+                  <span>Hi! {user.payload.username}</span>
                 </li>
                 <li className=" col">
                   <NavLink to={"/logout"} className="nav-link">

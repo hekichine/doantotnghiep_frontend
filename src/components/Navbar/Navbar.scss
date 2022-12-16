@@ -3,6 +3,9 @@
   .navbar-inner {
     list-style: none;
     align-items: center;
+    .logo-store {
+      width: 50px;
+    }
   }
   .nav-link.active {
     color: red;
