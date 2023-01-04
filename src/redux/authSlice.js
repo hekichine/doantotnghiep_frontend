@@ -10,6 +10,10 @@ const authSlice = createSlice({
     logout: {
       loading: false,
     },
+    register: {
+      loading: false,
+      currentData: null,
+    },
   },
   reducers: {
     loginStart: (state) => {
@@ -31,6 +35,18 @@ const authSlice = createSlice({
       state.logout.loading = false;
       state.login.currentData = null;
     },
+    registerStart: (state) => {
+      state.register.loading = true;
+      state.register.currentData = null;
+    },
+    registerSuccess: (state, action) => {
+      state.register.loading = false;
+      state.register.currentData = action.payload;
+    },
+    registerFaild: (state) => {
+      state.register.loading = false;
+      state.register.currentData = null;
+    },
   },
 });
 const { reducer, actions } = authSlice;
@@ -40,5 +56,8 @@ export const {
   loginFaild,
   logoutStart,
   logoutSuccess,
+  registerStart,
+  registerSuccess,
+  registerFaild,
 } = actions;
 export default reducer;

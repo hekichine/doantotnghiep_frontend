@@ -1,0 +1,14 @@
+$mobile-width: 767px;
+$tablet-width: 1023px;
+$ff: "Quicksand";
+
+@mixin mobile {
+  @media screen and (max-width: #{$mobile-width}) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media screen and (max-width: #{$tablet-width}) {
+    @content;
+  }
+}
